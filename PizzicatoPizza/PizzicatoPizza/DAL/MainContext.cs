@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using PizzicatoPizza.Models.DB;
+using System.Data.Entity;
 
 namespace DAL
 {
@@ -14,6 +15,11 @@ namespace DAL
 			this.Configuration.LazyLoadingEnabled = true;
 		}
 
-		//public DbSet<User> Users { get; set; }
-	}
+		public DbSet<User> Users { get; set; }
+        public DbSet<Courier> Couriers { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Pizza> Pizzas { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+    }
 }

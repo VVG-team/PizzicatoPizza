@@ -196,24 +196,41 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="BAL\AutoMapperConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\Interfaces\IBaseRepository.cs" />
     <Compile Include="DAL\Interfaces\IGenericRepository.cs" />
     <Compile Include="DAL\Interfaces\IUnitOfWork.cs" />
     <Compile Include="DAL\MainContext.cs" />
-    <Compile Include="DAL\Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DAL\Repozitories\BaseRepository.cs" />
     <Compile Include="DAL\Repozitories\GenericRepository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610041946163_first.cs" />
+    <Compile Include="Migrations\201610041946163_first.Designer.cs">
+      <DependentUpon>201610041946163_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Courier.cs" />
+    <Compile Include="Models\DB\Ingredient.cs" />
+    <Compile Include="Models\DB\Order.cs" />
+    <Compile Include="Models\DB\Pizza.cs" />
+    <Compile Include="Models\DB\Size.cs" />
+    <Compile Include="Models\DB\User.cs" />
+    <Compile Include="Models\DTO\CourierDTO.cs" />
+    <Compile Include="Models\DTO\IngredientDTO.cs" />
+    <Compile Include="Models\DTO\OrderDTO.cs" />
+    <Compile Include="Models\DTO\PizzaDTO.cs" />
+    <Compile Include="Models\DTO\SizeDTO.cs" />
+    <Compile Include="Models\DTO\UserDTO.cs" />
+    <Compile Include="Models\Enums\CategoryEnum.cs" />
+    <Compile Include="Models\Enums\CourierStatusEnum.cs" />
+    <Compile Include="Models\Enums\LanguageEnum.cs" />
+    <Compile Include="Models\Enums\OrderStateEnum.cs" />
+    <Compile Include="Models\Enums\RoleEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\EN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -229,6 +246,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Resources\UserPhotos\admin.jpg" />
+    <Content Include="Resources\UserPhotos\default.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -287,8 +306,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="BAL\Interfaces\" />
     <Folder Include="BAL\Managers\" />
-    <Folder Include="Models\DB\" />
-    <Folder Include="Models\DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -299,6 +316,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610041946163_first.resx">
+      <DependentUpon>201610041946163_first.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\EN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EN.Designer.cs</LastGenOutput>

@@ -1,5 +1,7 @@
 ﻿using DAL.Interface;
+using DAL.Interfaces;
 using DAL.Repositories;
+using PizzicatoPizza.Models.DB;
 using System;
 
 namespace DAL
@@ -10,16 +12,26 @@ namespace DAL
 
 		#region Private Repositories
 
-		//private IGenericRepository<User> userRepo;
-		
-		#endregion
+		private IGenericRepository<User> userRepo;
+        private IGenericRepository<Courier> courierRepo;
+        private IGenericRepository<Ingredient> ingredientRepo;
+        private IGenericRepository<Order> orderRepo;
+        private IGenericRepository<Pizza> pizzaRepo;
+        private IGenericRepository<Size> sizeRepo;
 
-		public UnitOfWork()
+        #endregion
+
+        public UnitOfWork()
 		{
 			context = new MainContext();
 
-			//userRepo = new GenericRepository<User>(context);
-		}
+			userRepo = new GenericRepository<User>(context);
+            courierRepo = new GenericRepository<Courier>(context);
+            ingredientRepo = new GenericRepository<Ingredient>(context);
+            orderRepo = new GenericRepository<Order>(context);
+            pizzaRepo = new GenericRepository<Pizza>(context);
+            sizeRepo = new GenericRepository<Size>(context);
+        }
 
 		public void Save()
 		{
@@ -37,12 +49,57 @@ namespace DAL
 			}
 		}
 
-		#endregion
+        public IGenericRepository<Courier> CourierRepo
+        {
+            get
+            {
+                if (courierRepo == null) courierRepo = new GenericRepository<Courier>(context);
+                return courierRepo;
+            }
+        }
 
-		#region Dispose
-		// https://msdn.microsoft.com/ru-ru/library/system.idisposable(v=vs.110).aspx
+        public IGenericRepository<Ingredient> IngredientRepo
+        {
+            get
+            {
+                if (ingredientRepo == null) ingredientRepo = new GenericRepository<Ingredient>(context);
+                return ingredientRepo;
+            }
+        }
 
-		private bool disposed = false;
+        public IGenericRepository<Order> OrderRepo
+        {
+            get
+            {
+                if (orderRepo == null) orderRepo = new GenericRepository<Order>(context);
+                return orderRepo;
+            }
+        }
+
+        public IGenericRepository<Pizza> PizzaRepo
+        {
+            get
+            {
+                if (pizzaRepo == null) pizzaRepo = new GenericRepository<Pizza>(context);
+                return pizzaRepo;
+            }
+        }
+
+        public IGenericRepository<Size> SizeRepo
+        {
+            get
+            {
+                if (sizeRepo == null) sizeRepo = new GenericRepository<Size>(context);
+                return sizeRepo;
+            }
+        }
+
+        #endregion
+
+        #region Dispose
+        // https://msdn.microsoft.com/ru-ru/library/system.idisposable(v=vs.110).aspx
+
+        private bool disposed = false;
 
 		protected virtual void Dispose(bool disposing)
 		{
