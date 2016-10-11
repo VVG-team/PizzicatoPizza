@@ -91,6 +91,31 @@ namespace DAL.Migrations
 
             sizes.ForEach(s => context.Sizes.AddOrUpdate(p => p.Name, s));
 
+            var couriers = new List<Courier>
+            {
+                new Courier()
+                {
+                    Nickname="FastMan",
+                    User = new User()
+                    {
+                        Name="Patrick",
+                        Surname="Ternel",
+                        Password="1234",
+                        Email="Ternel@mail.ru",
+                        Username="PatrickT",
+                        Role = PizzicatoPizza.Models.Enums.RoleEnum.Courier,
+                        Phone="+380996520007",
+                        Photo="default.png",
+                        Language=PizzicatoPizza.Models.Enums.LanguageEnum.English
+                    },
+
+                    Status=PizzicatoPizza.Models.Enums.CourierStatusEnum.Available
+
+                }
+            };
+
+            couriers.ForEach(c => context.Couriers.AddOrUpdate(p => p.Nickname, c));
+
             context.SaveChanges();
         }
     }
