@@ -16,6 +16,12 @@ namespace PizzicatoPizza.BAL.Managers
             this.uOW = uOW;
         }
 
+        public void AddPizza(Pizza pizza)
+        {
+            uOW.PizzaRepo.Insert(pizza);
+            uOW.Save();
+        }
+
         public void DeletePizza(int id)
         {
             uOW.PizzaRepo.Delete(id);

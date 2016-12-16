@@ -1,8 +1,13 @@
 ﻿var app = angular.module('App', []);
 app.controller('homeCtrl', homeCtrl);
 app.controller('manageCtrl', manageCtrl);
+app.controller('addCtrl', addCtrl);
 
 function homeCtrl($scope, $http) {
+
+    $scope.order = function () {
+        alert('Pizza has been ordered');
+    };
 
     $http.get('Home/GetPizzas').then(function (response) {
         $scope.pizzas = response.data;
@@ -31,4 +36,14 @@ function manageCtrl($scope, $http) {
         });
     }
 
+}
+
+function addCtrl($scope, $http) {
+    $scope.pizza = {};
+    $scope.add = function () {
+        $scope.pizza.Image = 'Boston.png';
+        $http.post('Add/AddPizza', $scope.pizza).then(function (response) {
+            alert('Pizza has been added');
+        });
+    };
 }

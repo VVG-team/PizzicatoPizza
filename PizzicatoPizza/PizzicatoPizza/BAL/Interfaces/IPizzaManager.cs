@@ -11,5 +11,6 @@ namespace PizzicatoPizza.BAL.Interfaces
         List<Pizza> GetPizzas();
         void DeletePizza(int id);
         void UpdatePizza(Pizza pizza);
+        void AddPizza(Pizza pizza);
     }
 }

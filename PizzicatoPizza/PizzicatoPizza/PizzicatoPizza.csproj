@@ -241,6 +241,7 @@
     <Compile Include="BAL\AutoMapperConfig.cs" />
     <Compile Include="BAL\Interfaces\IPizzaManager.cs" />
     <Compile Include="BAL\Managers\PizzaManager.cs" />
+    <Compile Include="Controllers\AddController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\Interfaces\IBaseRepository.cs" />
@@ -341,6 +342,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Add\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
