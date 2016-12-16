@@ -21,5 +21,7 @@ namespace DAL
         public DbSet<Order> Orders { get; set; }
         public DbSet<Pizza> Pizzas { get; set; }
         public DbSet<Size> Sizes { get; set; }
+        public DbSet<OrderPizza> OrderPizzas { get; set; }
+        public DbSet<PizzaIngredient> PizzaIngredients { get; set; }
     }
 }

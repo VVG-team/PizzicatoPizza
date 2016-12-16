@@ -2,8 +2,8 @@
 {
     public enum OrderStateEnum
     {
-        New = 0,
-        InProgress = 1,
-        Done = 2
+        New,
+        InProgress,
+        Done
     }
 }

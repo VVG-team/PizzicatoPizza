@@ -14,7 +14,7 @@ namespace DAL.Repositories
 		public virtual void Delete(object id)
 		{
 			TEntity entityToDelete = dbSet.Find(id);
-			Delete(entityToDelete);
+			dbSet.Remove(entityToDelete);
 		}
 	}
 }

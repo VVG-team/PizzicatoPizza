@@ -1,4 +1,6 @@
-﻿namespace PizzicatoPizza.Models.DB
+﻿using PizzicatoPizza.Models.Enums;
+
+namespace PizzicatoPizza.Models.DB
 {
     public class Ingredient
     {
@@ -12,6 +14,6 @@
 
         public string Image { get; set; }
 
-        public Enums.CategoryEnum Category { get; set; }
+        public CategoryEnum Category { get; set; }
     }
 }

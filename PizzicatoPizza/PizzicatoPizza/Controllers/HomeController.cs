@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using PizzicatoPizza.BAL.Interfaces;
 using System.Web.Mvc;
 
 namespace PizzicatoPizza.Controllers
 {
-	public class HomeController : Controller
+    public class HomeController : Controller
 	{
+        private IPizzaManager pizzaManager;
+
+        public HomeController(IPizzaManager pizzaManager)
+        {
+            this.pizzaManager = pizzaManager;
+        }
+
 		public ActionResult Index()
 		{
 			return View();
 		}
 
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-
-			return View();
-		}
-
-		public ActionResult Contact()
-		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
-		}
+        [HttpGet]
+		public JsonResult GetPizzas()
+        {
+            var pizzas = pizzaManager.GetPizzas();
+            return Json(pizzas, JsonRequestBehavior.AllowGet);
+        }
 	}
 }

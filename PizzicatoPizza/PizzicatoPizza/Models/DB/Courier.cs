@@ -1,4 +1,6 @@
-﻿namespace PizzicatoPizza.Models.DB
+﻿using PizzicatoPizza.Models.Enums;
+
+namespace PizzicatoPizza.Models.DB
 {
     public class Courier
     {
@@ -6,8 +8,8 @@
 
         public string Nickname { get; set; }
 
-        public User User { get; set; }
+        public CourierStatusEnum Status { get; set; }
 
-        public Enums.CourierStatusEnum Status { get; set; }
+        public User User { get; set; }
     }
 }

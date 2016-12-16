@@ -11,6 +11,8 @@ namespace DAL.Interface
         IGenericRepository<Order> OrderRepo { get; }
         IGenericRepository<Pizza> PizzaRepo { get; }
         IGenericRepository<Size> SizeRepo { get; }
+        IGenericRepository<OrderPizza> OrderPizzaRepo { get; }
+        IGenericRepository<PizzaIngredient> PizzaIngredientRepo { get; }
 
         void Dispose();
 

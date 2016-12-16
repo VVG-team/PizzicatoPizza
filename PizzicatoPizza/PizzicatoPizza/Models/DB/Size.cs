@@ -9,5 +9,7 @@
         public int Diameter { get; set; }
 
         public double Coefficient { get; set; }
+
+        public decimal Price { get; set; }
     }
 }

@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PizzicatoPizza.Models.Enums;
+using System;
 
 namespace PizzicatoPizza.Models.DB
 {
@@ -9,9 +9,7 @@ namespace PizzicatoPizza.Models.DB
 
 		public DateTime Date { get; set; }
 
-		public User Client { get; set; }
-
-		public Enums.OrderStateEnum State { get; set; }
+		public OrderStateEnum State { get; set; }
 
 		public decimal Cost { get; set; }
 
@@ -19,9 +17,9 @@ namespace PizzicatoPizza.Models.DB
 
 		public int OrderTime { get; set; }
 
-		public List<Pizza> Pizzas { get; set; }
+        public User Client { get; set; }
 
-		public Courier Courier { get; set; }
+        public Courier Courier { get; set; }
 	}
 }
 

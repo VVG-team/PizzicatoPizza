@@ -25,6 +25,12 @@ namespace PizzicatoPizza.BAL
 
             Mapper.Initialize(cfg => cfg.CreateMap<Size, SizeDTO>());
             Mapper.Initialize(cfg => cfg.CreateMap<SizeDTO, Size>());
+
+            Mapper.Initialize(cfg => cfg.CreateMap<OrderPizza, OrderPizzaDTO>());
+            Mapper.Initialize(cfg => cfg.CreateMap<OrderPizzaDTO, OrderPizza>());
+
+            Mapper.Initialize(cfg => cfg.CreateMap<PizzaIngredient, PizzaIngredientDTO>());
+            Mapper.Initialize(cfg => cfg.CreateMap<PizzaIngredientDTO, PizzaIngredient>());
         }
     }
 }

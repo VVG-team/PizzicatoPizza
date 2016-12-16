@@ -1,4 +1,6 @@
-﻿namespace PizzicatoPizza.Models.DTO
+﻿using PizzicatoPizza.Models.Enums;
+
+namespace PizzicatoPizza.Models.DTO
 {
     public class IngredientDTO
     {
@@ -12,6 +14,6 @@
 
         public string Image { get; set; }
 
-        public Enums.CategoryEnum Category { get; set; }
+        public CategoryEnum Category { get; set; }
     }
 }

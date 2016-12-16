@@ -18,6 +18,8 @@ namespace DAL
         private IGenericRepository<Order> orderRepo;
         private IGenericRepository<Pizza> pizzaRepo;
         private IGenericRepository<Size> sizeRepo;
+        private IGenericRepository<OrderPizza> orderPizzaRepo;
+        private IGenericRepository<PizzaIngredient> pizzaIngredientRepo;
 
         #endregion
 
@@ -31,6 +33,8 @@ namespace DAL
             orderRepo = new GenericRepository<Order>(context);
             pizzaRepo = new GenericRepository<Pizza>(context);
             sizeRepo = new GenericRepository<Size>(context);
+            orderPizzaRepo = new GenericRepository<OrderPizza>(context);
+            pizzaIngredientRepo = new GenericRepository<PizzaIngredient>(context);
         }
 
 		public void Save()
@@ -91,6 +95,24 @@ namespace DAL
             {
                 if (sizeRepo == null) sizeRepo = new GenericRepository<Size>(context);
                 return sizeRepo;
+            }
+        }
+
+        public IGenericRepository<OrderPizza> OrderPizzaRepo
+        {
+            get
+            {
+                if (orderPizzaRepo == null) orderPizzaRepo = new GenericRepository<OrderPizza>(context);
+                return orderPizzaRepo;
+            }
+        }
+
+        public IGenericRepository<PizzaIngredient> PizzaIngredientRepo
+        {
+            get
+            {
+                if (pizzaIngredientRepo == null) pizzaIngredientRepo = new GenericRepository<PizzaIngredient>(context);
+                return pizzaIngredientRepo;
             }
         }
 

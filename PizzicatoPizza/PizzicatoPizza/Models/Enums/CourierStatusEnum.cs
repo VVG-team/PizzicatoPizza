@@ -2,8 +2,8 @@
 {
     public enum CourierStatusEnum
     {
-        NotAvailable = 0,
-        Available = 1,
-        ExecutesOrder = 2
+        NotAvailable,
+        Available,
+        ExecutesOrder
     }
 }

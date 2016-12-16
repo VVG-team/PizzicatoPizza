@@ -1,4 +1,6 @@
-﻿namespace PizzicatoPizza.Models.DTO
+﻿using PizzicatoPizza.Models.Enums;
+
+namespace PizzicatoPizza.Models.DTO
 {
     public class UserDTO
     {
@@ -8,7 +10,7 @@
 
         public string Password { get; set; }
 
-        public Enums.RoleEnum Role { get; set; }
+        public RoleEnum Role { get; set; }
 
         public string Name { get; set; }
 
@@ -18,8 +20,10 @@
 
         public string Phone { get; set; }
 
+        public string Address { get; set; }
+
         public string Photo { get; set; }
 
-        public Enums.LanguageEnum Language { get; set; }
+        public LanguageEnum Language { get; set; }
     }
 }
